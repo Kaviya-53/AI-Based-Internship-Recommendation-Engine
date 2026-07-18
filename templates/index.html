@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Internship Recommendation Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+
+    <h2>🎓 AI Internship Recommendation Portal</h2>
+
+    <div>
+
+        <a href="/">Home</a>
+
+        <a href="/favourites">Favourites</a>
+
+        <a href="/admin">Admin</a>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+{% if username %}
+<h2>👋 Welcome, {{ username }}</h2>
+{% endif %}
+
+<h1>🎓 AI Internship Recommendation Portal</h1>
+
+<p style="text-align:center; font-size:18px;">
+    Discover the best internship using Artificial Intelligence.
+</p>
+
+<p style="text-align:center;">
+    📄 Upload Resume • 🤖 AI Skill Analysis • 🎯 Best Internship Recommendation
+</p>
+
+</div>
+
+    <a href="/favourites">
+    ❤️ My Favourite Internships
+</a>
+
+<br><br>
+
+<form action="/recommend" method="POST" enctype="multipart/form-data">
+
+        <label><b>👤 Student Name</b></label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+
+        <br><br>
+
+        <label><b>🏫 College Name</b></label>
+        <input type="text" name="college" placeholder="Enter your college name" required>
+
+        <br><br>
+
+        <label><b>💻 Skills</b></label>
+        <input type="text"
+               name="skills"
+               placeholder="Example: Python, SQL, Java"
+               required>
+
+        <br><br>
+
+    <label><b>📄 Upload Resume</b></label><br>
+
+    <input type="file"
+       name="resume"
+       accept=".pdf,.doc,.docx">
+
+    <br><br>
+
+        <label>State</label>
+
+        <select name="state" required>
+
+              <option value="Tamil Nadu">Tamil Nadu</option>
+
+        </select>
+
+        <br><br>
+
+        <label><b>📍 District</b></label>
+
+        <select name="district" required>
+
+            <option value="">Select District</option>
+
+            <option value="Ariyalur">Ariyalur</option>
+            <option value="Chengalpattu">Chengalpattu</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Cuddalore">Cuddalore</option>
+            <option value="Dharmapuri">Dharmapuri</option>
+            <option value="Dindigul">Dindigul</option>
+            <option value="Erode">Erode</option>
+            <option value="Kallakurichi">Kallakurichi</option>
+            <option value="Kanchipuram">Kanchipuram</option>
+            <option value="Kanniyakumari">Kanniyakumari</option>
+            <option value="Karur">Karur</option>
+            <option value="Krishnagiri">Krishnagiri</option>
+            <option value="Madurai">Madurai</option>
+            <option value="Mayiladuthurai">Mayiladuthurai</option>
+            <option value="Nagapattinam">Nagapattinam</option>
+            <option value="Namakkal">Namakkal</option>
+            <option value="Nilgiris">Nilgiris</option>
+            <option value="Perambalur">Perambalur</option>
+            <option value="Pudukkottai">Pudukkottai</option>
+            <option value="Ramanathapuram">Ramanathapuram</option>
+            <option value="Ranipet">Ranipet</option>
+            <option value="Salem">Salem</option>
+            <option value="Sivagangai">Sivagangai</option>
+            <option value="Tenkasi">Tenkasi</option>
+            <option value="Thanjavur">Thanjavur</option>
+            <option value="Theni">Theni</option>
+            <option value="Thoothukudi">Thoothukudi</option>
+            <option value="Trichy">Trichy</option>
+            <option value="Tirunelveli">Tirunelveli</option>
+            <option value="Tirupathur">Tirupathur</option>
+            <option value="Tiruppur">Tiruppur</option>
+            <option value="Tiruvallur">Tiruvallur</option>
+            <option value="Tiruvannamalai">Tiruvannamalai</option>
+            <option value="Tiruvarur">Tiruvarur</option>
+            <option value="Vellore">Vellore</option>
+            <option value="Viluppuram">Viluppuram</option>
+            <option value="Virudhunagar">Virudhunagar</option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+            🔍 Recommend Internship
+        </button>
+
+    </form>
+
+</div>
+
+<footer class="footer">
+
+    <p>© 2026 AI Internship Recommendation Portal</p>
+
+    <p>Developed by Kaviya G | B.Tech CSBS | VSB Engineering College</p>
+
+</footer>
+
+</body>
+</html>

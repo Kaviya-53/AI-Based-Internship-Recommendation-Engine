@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>View Internships</title>
+</head>
+
+<body>
+
+<h1>📋 All Internships</h1>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Title</th>
+    <th>Company</th>
+    <th>District</th>
+    <th>Stipend</th>
+    <th>Type</th>
+    <th>Rating</th>
+    <th>Action</th>
+</tr>
+
+{% for i in internships %}
+
+<tr>
+
+<td>{{ i["Internship_Title"] }}</td>
+<td>{{ i["Company"] }}</td>
+<td>{{ i["District"] }}</td>
+<td>₹{{ i["Stipend"] }}</td>
+<td>{{ i["Internship_Type"] }}</td>
+<td>{{ i["Rating"] }}</td>
+<td>
+
+<a href="/edit/{{ loop.index0 }}">
+    ✏️ Edit
+</a>
+
+|
+
+<a href="/delete/{{ loop.index0 }}">
+    🗑️ Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/admin">
+    ⬅ Back to Admin
+</a>
+
+</body>
+</html>

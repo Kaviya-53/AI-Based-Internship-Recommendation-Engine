@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Internship</title>
+</head>
+<body>
+
+<h2>✏️ Edit Internship</h2>
+
+<form action="/edit/{{ index }}" method="POST">
+
+    Internship Title:<br>
+    <input type="text" name="title" value="{{ internship['Internship_Title'] }}" required><br><br>
+
+    Company:<br>
+    <input type="text" name="company" value="{{ internship['Company'] }}" required><br><br>
+
+    State:<br>
+    <input type="text" name="state" value="{{ internship['State'] }}" required><br><br>
+
+    District:<br>
+    <input type="text" name="district" value="{{ internship['District'] }}" required><br><br>
+
+    Skills:<br>
+    <input type="text" name="skills" value="{{ internship['Skills'] }}" required><br><br>
+
+    Location:<br>
+    <input type="text" name="location" value="{{ internship['Location'] }}" required><br><br>
+
+    Stipend:<br>
+    <input type="text" name="stipend" value="{{ internship['Stipend'] }}" required><br><br>
+
+    Duration:<br>
+    <input type="text" name="duration" value="{{ internship['Duration'] }}" required><br><br>
+
+    Internship Type:<br>
+    <input type="text" name="internship_type" value="{{ internship['Internship_Type'] }}" required><br><br>
+
+    Rating:<br>
+    <input type="text" name="rating" value="{{ internship['Rating'] }}" required><br><br>
+
+    Map Link:<br>
+    <input type="text" name="map_link" value="{{ internship['Map_Link'] }}" required><br><br>
+
+    Apply Link:<br>
+    <input type="text" name="apply_link" value="{{ internship['Apply_Link'] }}" required><br><br>
+
+    <button type="submit">💾 Update Internship</button>
+
+</form>
+
+<br>
+
+<a href="/view_internships">⬅ Back</a>
+
+</body>
+</html>

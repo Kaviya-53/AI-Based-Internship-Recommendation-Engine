@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    
+<h1>🎯 Best Internship Recommendation</h1>
+
+<div class="card" style="text-align:center;">
+
+<img src="{{ url_for('static', filename='logos/' + logo) }}"
+     alt="Company Logo"
+     width="120"
+     height="120">
+
+<h2>{{ company }}</h2>
+
+<h3>{{ internship }}</h3>
+
+<hr>
+
+<br><br>
+
+<p><b>Internship :</b> {{ internship }}</p>
+
+    <p><b>Company :</b> {{ company }}</p>
+
+    <p><b>Location :</b> {{ location }}</p>
+
+    <p><b>Stipend :</b> ₹{{ stipend }}</p>
+
+    <p><b>Duration :</b> {{ duration }}</p>
+
+    <p><b>💼 Internship Type :</b> {{ internship_type }}</p>
+
+    <p><b>⭐ Rating :</b> {{ rating }}/5</p>
+
+    <p><b>Match Percentage :</b> {{ match }}%</p>
+    
+    <p><b>🧠 Skills Used for Recommendation :</b> {{ extracted_skills }}</p>
+
+    <p>
+<p>
+    <button onclick="window.open('{{ map_link }}')">
+         📍 Open Google Maps
+    </button>
+</p>
+
+<p>
+    <button onclick="window.open('{{ apply_link }}')">
+       🌐 Apply Now
+    </button>
+</p>
+
+        <form action="/save" method="POST">
+
+            <input type="hidden" name="company" value="{{ company }}">
+            <input type="hidden" name="internship" value="{{ internship }}">
+            <input type="hidden" name="location" value="{{ location }}">
+            <input type="hidden" name="stipend" value="{{ stipend }}">
+
+            <button type="submit">
+                ❤️ Save Internship
+            </button>
+
+</form>
+    </p>
+
+    <hr>
+
+    <h2>🏆 Top 3 Internship Recommendations</h2>
+
+    {% for item in top_recommendations %}
+
+    <div style="border:1px solid #ccc; padding:15px; margin:15px 0; border-radius:10px;">
+
+<img src="{{ url_for('static', filename='logos/' + item.logo) }}"
+     alt="Company Logo"
+     width="80"
+     height="80">
+
+<h3>{{ loop.index }}. {{ item.title }}</h3>
+
+        <p><b>Company :</b> {{ item.company }}</p>
+
+        <p><b>Location :</b> {{ item.location }}</p>
+
+        <p><b>Stipend :</b> ₹{{ item.stipend }}</p>
+
+<p><b>Duration :</b> {{ item.duration }}</p>
+
+<p><b>💼 Internship Type :</b> {{ item.type }}</p>
+
+<p><b>⭐ Rating :</b> {{ item.rating }}/5</p>
+
+<p><b>Match :</b> {{ item.percentage }}%</p>
+
+        <p>
+            <a href="{{ item.map_link }}" target="_blank">
+                📍 Open Google Maps
+            </a>
+        </p>
+
+        <p>
+            <a href="{{ item.apply_link }}" target="_blank">
+                🌐 Apply Now
+            </a>
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+    <br>
+
+    <a href="/">← Go Back</a>
+
+</div>
+
+</body>
+</html>

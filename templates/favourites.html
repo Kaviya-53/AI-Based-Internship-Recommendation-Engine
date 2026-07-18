@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Favourite Internships</title>
+</head>
+
+<body>
+
+<h1>❤️ My Favourite Internships</h1>
+
+<table border="1">
+
+<tr>
+    <th>Company</th>
+    <th>Internship</th>
+    <th>Location</th>
+    <th>Stipend</th>
+</tr>
+
+{% for item in favourites %}
+
+<tr>
+
+<td>{{ item[2] }}</td>
+
+<td>{{ item[3] }}</td>
+
+<td>{{ item[4] }}</td>
+
+<td>₹{{ item[5] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/">
+    🏠 Back to Home
+</a>
+
+</body>
+</html>
