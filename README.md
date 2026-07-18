@@ -190,15 +190,6 @@ Anna University
 
 ---
 
-## 👨‍🏫 Project Guide
-
-**Mr. G. Gowtham Siddaryh**
-
-Assistant Professor
-
-Department of CSBS
-
-V.S.B Engineering College
 
 ---
 
