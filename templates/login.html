@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Student Login</title>
+    <title>AI Internship Recommendation Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="login-page">
 
-<h1>Student Login</h1>
+<div class="login-box">
 
-<form action="/login" method="POST">
+    <h1>🎯 AI Internship Recommendation</h1>
+    <p>Login to discover internships recommended by AI.</p>
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+     <form action="/login" method="POST">
 
-    <label>Password</label><br>
-    <input type="password" name="password" required><br><br>
+        <input type="email"
+               name="email"
+               placeholder="Email"
+               required>
 
-    <input type="submit" value="Login">
+        <input type="password"
+               name="password"
+               placeholder="Password"
+               required>
 
-</form>
+        <button type="submit">
+            Login
+        </button>
 
-<br>
+    </form>
 
-<a href="/register">Create New Account</a>
+    <p>
+        New user?
+        <a href="/register">Create Account</a>
+    </p>
+
+</div>
 
 </body>
 </html>
