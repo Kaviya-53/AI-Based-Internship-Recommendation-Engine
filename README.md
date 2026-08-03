@@ -197,4 +197,21 @@ Anna University
 
 This project was developed for academic and educational purposes only.
 
-© 2026 Kaviya G
+© 2026 Kaviya 
+
+# AI-Based Internship Recommendation Engine
+
+## Live Demo
+https://kaviya23.pythonanywhere.com
+
+## GitHub Repository
+https://github.com/Kaviya-53/AI-Based-Internship-Recommendation-Engine
+
+## Technologies Used
+- Python
+- Flask
+- SQLite
+- Pandas
+- Scikit-learn
+- HTML
+- CSS
